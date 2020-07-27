@@ -8,13 +8,14 @@ pipeline {
         stage('NPM Install') {
             steps {
                 echo 'NPM Version'
-				bat "npm -v"
+				bat "npm install"
             
         }
 		}
-        stage('Test') {
+        stage('Build') {
             steps {
-                echo 'Testing..'
+                echo 'Build..'
+				bat "ng build --prod  --base-href ./ && cp CNAME dist/CNAME"
             }
         }
         stage('Deploy') {
