@@ -2,11 +2,11 @@ pipeline {
     agent any
 	
     stages {
-		nodejs('Node JS 14') {
-    
+		    
         stage('NPM Install') {
             steps {
                 echo ''
+				nodejs('Node JS 14') {
 				npm -v
             }
         }
