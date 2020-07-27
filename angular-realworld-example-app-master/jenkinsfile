@@ -8,7 +8,7 @@ pipeline {
         stage('NPM Install') {
             steps {
                 echo 'NPM Version'
-				npm -v
+				bat "npm -v"
             
         }
 		}
