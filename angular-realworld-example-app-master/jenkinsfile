@@ -8,7 +8,7 @@ pipeline {
         stage('NPM Install') {
             steps {
                 echo 'NPM Installation...'
-				cd angular-realworld-example-app-master
+				bat "cd angular-realworld-example-app-master"
 				bat "npm install"
             
         }
