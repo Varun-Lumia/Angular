@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	
+	nodejs('Node JS 14') {
+    // some block
+
 
     stages {
         stage('NPM Install') {
@@ -8,6 +12,7 @@ pipeline {
 				npm -v
             }
         }
+		}
         stage('Test') {
             steps {
                 echo 'Testing..'
