@@ -16,8 +16,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build..'
+				dir("angular-realworld-example-app-master"){	
 				bat label: '', script: 'ng build --prod  --base-href ./ && cp CNAME dist/CNAME'				
             }
+			}
         }
         stage('Deploy') {
             steps {
