@@ -8,15 +8,15 @@ pipeline {
         stage('NPM Install') {
             steps {
                 echo 'NPM Installation...'
-				bat "cd angular-realworld-example-app-master"
-				bat "npm install"
+				bat label: '', script: 'cd angular-realworld-example-app-master'				
+				bat label: '', script: 'npm install'
             
         }
 		}
         stage('Build') {
             steps {
                 echo 'Build..'
-				bat "ng build --prod  --base-href ./ && cp CNAME dist/CNAME"
+				bat label: '', script: 'ng build --prod  --base-href ./ && cp CNAME dist/CNAME'				
             }
         }
         stage('Deploy') {
