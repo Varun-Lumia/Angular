@@ -7,10 +7,10 @@ pipeline {
 		    
         stage('NPM Install') {
             steps {
-                echo 'NPM Installation...'
-				bat label: '', script: 'cd angular-realworld-example-app-master'				
+                echo 'NPM Installation...'				
+				dir("angular-realworld-example-app-master"){			
 				bat label: '', script: 'npm install'
-            
+            }
         }
 		}
         stage('Build') {
