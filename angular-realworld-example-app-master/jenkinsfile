@@ -10,6 +10,7 @@ pipeline {
                 echo 'NPM Installation...'				
 				dir("angular-realworld-example-app-master"){			
 				bat label: '', script: 'npm install'
+				bat label: '', script: 'npm run build'				
             }
         }
 		}
@@ -17,7 +18,7 @@ pipeline {
             steps {
                 echo 'Build..'
 				dir("angular-realworld-example-app-master"){	
-				bat label: '', script: 'ng build --prod  --base-href ./ && cp CNAME dist/CNAME'				
+				
             }
 			}
         }
