@@ -1,10 +1,12 @@
 pipeline{
 	agent any
-
+        tool name: 'Maven', type: 'maven'
      stages{
-     	stage("Example"){
+     	stage("Build"){
 		steps{
-		echo "Hello World"
+		echo "Building"
+		bat label: '', script: 'cd Beers-of-the-World-master\\beeroftheworld'
+		bat label: '', script: 'mvn --version'
 		}
 	}
    }
