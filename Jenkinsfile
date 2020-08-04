@@ -3,7 +3,7 @@ pipeline{
         tools{
 		maven 'Maven'
 	}
-	bat label: '', script: 'cd Beers-of-the-World-master\\beeroftheworld'
+	dir("%cd%\Beers-of-the-World-master\beeroftheworld"){
      stages{	 
      	stage("Build"){
 		steps{
@@ -22,4 +22,4 @@ pipeline{
 	}
    }
    }
-
+}
