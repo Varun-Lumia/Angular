@@ -11,13 +11,13 @@ pipeline{
 		bat label: '', script: 'mvn clean install'
 		}
 	}
-	stage("Build"){
+	    stage("Sonar"){
 		steps{
 		echo "Sonar"
 		bat label: '', script: '''mvn sonar:sonar \\
-  -Dsonar.projectKey=pms_backend \\
-  -Dsonar.host.url=http://localhost:9000 \\
-  -Dsonar.login=tiktok'''
+        -Dsonar.projectKey=pms_backend \\
+        -Dsonar.host.url=http://localhost:9000 \\
+        -Dsonar.login=tiktok'''
 		}
 	}
    }
