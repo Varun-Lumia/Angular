@@ -17,7 +17,7 @@ pipeline{
 		echo "Sonar"
 		dir('Beers-of-the-World-master\\beeroftheworld') {
 		bat label: '', script: '''mvn sonar:sonar \\
-        -Dsonar.projectKey=pms_backend \\
+        -Dsonar.projectKey=beeroftheworld:beeroftheworld \\
         -Dsonar.host.url=http://localhost:9000 \\
         -Dsonar.login=tiktok'''
 		}
