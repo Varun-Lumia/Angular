@@ -3,12 +3,12 @@ pipeline{
         tools{
 		maven 'Maven'
 	}
-     stages{
-	 dir("\\Beers-of-the-World-master\\beeroftheworld"){
+	dir('Beers-of-the-World-master\\beeroftheworld'){
+     stages{	 
      	stage("Build"){
 		steps{
 		echo "Building"
-		bat label: '', script: 'cd Beers-of-the-World-master\\beeroftheworld'
+//		bat label: '', script: 'cd Beers-of-the-World-master\\beeroftheworld'
 		bat label: '', script: 'mvn clean install'
 		}
 	}
