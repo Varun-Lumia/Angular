@@ -8,7 +8,16 @@ pipeline{
 		steps{
 		echo "Building"
 		bat label: '', script: 'cd Beers-of-the-World-master\\beeroftheworld'
-		bat label: '', script: 'mvn --version'
+		bat label: '', script: 'mvn clean install'
+		}
+	}
+	stage("Build"){
+		steps{
+		echo "Sonar"
+		bat label: '', script: '''mvn sonar:sonar \\
+  -Dsonar.projectKey=pms_backend \\
+  -Dsonar.host.url=http://localhost:9000 \\
+  -Dsonar.login=tiktok'''
 		}
 	}
    }
