@@ -4,6 +4,7 @@ pipeline{
 		maven 'Maven'
 	}
      stages{
+	 dir("\\Beers-of-the-World-master\\beeroftheworld"){
      	stage("Build"){
 		steps{
 		echo "Building"
@@ -20,5 +21,6 @@ pipeline{
         -Dsonar.login=tiktok'''
 		}
 	}
+   }
    }
 }
